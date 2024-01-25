@@ -1,5 +1,6 @@
 import excel_to_db as excel_to_db
 import doc.paths as doc
+import create_file_links_list_from_db as cf
 
 
 if __name__=='__main__':
@@ -9,3 +10,12 @@ if __name__=='__main__':
     
     
     excel_to_db.load(file_excel_report)
+
+    #  Fill in the form current report.
+    company = doc.company 
+    report_month = doc.report_month
+    date_start = doc.date_start
+    date_end = doc.date_end
+
+    #  Create stg-tables.
+    cf.create_STG_tables(company, date_start, date_end)
