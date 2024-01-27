@@ -47,7 +47,7 @@ def load(file_path: str) -> None:
     if connected:
         _creat_db(conn)
 
-    df = pd.read_excel(file_path, engine='openpyxl')
-    df.to_sql('adv_publications', conn, if_exists='replace', index=False, index_label=None)
-    conn.commit()
- 
+        df = pd.read_excel(file_path, engine='openpyxl')
+        df.to_sql('adv_publications', conn, if_exists='replace', index=False, index_label=None)
+        conn.commit()
+    

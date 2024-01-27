@@ -1,7 +1,6 @@
 import sqlite3
 
-
-def create_STG_tables(company, date_start, date_end):
+def _create_STG_common_click_links_table(company, date_start, date_end):
     con = sqlite3.connect('scr/doc/online_adv.db')
     cursor = con.cursor()
 
@@ -61,6 +60,12 @@ def create_STG_tables(company, date_start, date_end):
         and   дата <= ? 
     ''', [company, company, company, company, date_start, date_end])
 
+    con.commit()
+    con.close()
+
+def _create_STG_tw_click_links_table(company, date_start, date_end):
+    con = sqlite3.connect('scr/doc/online_adv.db')
+    cursor = con.cursor()
 
     cursor.execute('DROP TABLE IF EXISTS STG_TW_CLICK_LINKS')
 
@@ -82,6 +87,12 @@ def create_STG_tables(company, date_start, date_end):
         and   дата <= ? 
     ''', [company, date_start, date_end])
 
+    con.commit()
+    con.close()
+
+def _create_STG_report_links_table(company, date_start, date_end):
+    con = sqlite3.connect('scr/doc/online_adv.db')
+    cursor = con.cursor()
 
     cursor.execute('DROP TABLE IF EXISTS STG_REPORT_LINKS')
 
@@ -151,6 +162,9 @@ def create_STG_tables(company, date_start, date_end):
         and   дата <= ? 
     ''', [company, company, company, company, company, date_start, date_end])
 
+    con.commit()
+    con.close()
+
 
     # cursor.execute('''
     #     select * from STG_REPORT_LINKS
@@ -161,4 +175,12 @@ def create_STG_tables(company, date_start, date_end):
     # for row in cursor.fetchall():
     #     # print(row)
     #     report_links.append(row)
+def create_STG_tables(company, date_start, date_end):
+    _create_STG_common_click_links_table(company, date_start, date_end)
+    _create_STG_tw_click_links_table(company, date_start, date_end)
+    _create_STG_report_links_table(company, date_start, date_end)
+'''
+Переименовать колонки
+Вынести sql-скрипт в отдельные файлы?
+'''
     
