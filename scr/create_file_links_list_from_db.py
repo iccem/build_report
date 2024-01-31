@@ -177,7 +177,7 @@ def _create_STG_report_links_table(company, date_start, date_end):
     #     report_links.append(row)
 def create_STG_tables(company, date_start, date_end):
     _create_STG_common_click_links_table(company, date_start, date_end)
-    _create_STG_tw_click_links_table(company, date_start, date_end)
+    # _create_STG_tw_click_links_table(company, date_start, date_end)
     _create_STG_report_links_table(company, date_start, date_end)
 '''
 Переименовать колонки

@@ -1,6 +1,7 @@
 import excel_to_db as excel_to_db
 import doc.paths as doc
 import create_file_links_list_from_db as cf
+import make_screen as m
 
 
 if __name__=='__main__':
@@ -19,3 +20,7 @@ if __name__=='__main__':
 
     #  Create stg-tables.
     cf.create_STG_tables(company, date_start, date_end)
+
+    ###  Make screen.
+    path_for_screens = doc.path_for_screens
+    m.make_screen(path_for_screens)
