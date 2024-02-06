@@ -1,14 +1,10 @@
 from selenium import webdriver
-# from selenium.webdriver.common.by import By
 import time
-# from selenium.webdriver.common.keys import Keys
-# from selenium.webdriver.remote.mobile import Mobile
-# from selenium.webdriver.chrome.options import Options as ChromeOptions
 import sqlite3
 import os
 import time
 import errno
-from doc import paths
+# from doc import paths
 
 
 def _get_selenium(rows, path_for_screens, timpe_sleep):
@@ -118,4 +114,3 @@ def make_screen(path_for_screens):
 
         print('МОЖНО ВЫКЛЮЧИТЬ!')
     
-
