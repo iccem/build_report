@@ -5,7 +5,7 @@ import sqlite3
 
 
 def _get_report_links() -> list:
-    con = sqlite3.connect('doc/online_adv.db')
+    con = sqlite3.connect('scr/doc/online_adv.db')
     cursor = con.cursor()
     temp = []
     links_report_list = []
@@ -46,8 +46,8 @@ def get_report(company, month, path_imgs):
         section.left_margin = Mm(12)
         section.right_margin = Mm(12)
 
-    document.add_heading('ОТЧЕТ О РАЗМЕЩЕНИИ', 1)
-    document.add_heading('Проект: «ОНЛАЙН»', 2)
+    document.add_heading('ОТЧЕТ О РАЗМЕЩЕНИИ. Проект: «ОНЛАЙН»', 2)
+    # document.add_heading('Проект: «ОНЛАЙН»', 2)
     document.add_heading(f'Период: {month}', 3)
 
     # list of links

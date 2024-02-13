@@ -38,7 +38,7 @@ def _get_common_links(common_click_links):
     '''Получает список общих ссылок из таблицы 
     и генерирует названия файлов.
     Возвращает список пар: имя файла и ссылка'''
-    con = sqlite3.connect('doc/online_adv.db')
+    con = sqlite3.connect('scr/doc/online_adv.db')
     cursor = con.cursor()
     cursor.execute('''
         select * from STG_COMMON_CLICK_LINKS

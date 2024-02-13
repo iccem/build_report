@@ -28,3 +28,5 @@ if __name__=='__main__':
 
     #  Create report.
     c.get_report(company, report_month, path_for_screens)
+
+    print("DONE")
