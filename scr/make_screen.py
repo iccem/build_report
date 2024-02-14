@@ -7,8 +7,9 @@ import errno
 # from doc import paths
 
 
-def _get_selenium(rows, path_for_screens, timpe_sleep):
-    print(rows, '\n')
+def _get_selenium(rows, path_for_screens, time_sleep):
+    print('Количество записей: ', len(rows))
+    print(*rows, sep="\n")
     for x, y in rows.items():
         path_for_screen = y
         file_name = path_for_screens + x
@@ -21,7 +22,7 @@ def _get_selenium(rows, path_for_screens, timpe_sleep):
         time.sleep(3)
         try:
             driver.get(path_for_screen)
-            time.sleep(timpe_sleep)
+            time.sleep(time_sleep)
 
             driver.save_screenshot(file_name)
             time.sleep(5)
@@ -56,8 +57,10 @@ def _make_common_screen():
     common_click_links =_get_common_links(common_click_links)
 
     for row in common_click_links:
-        date = str(row[1]).replace(" 00:00:00", "")
-        filename = str(row[0]) + '   ' + date + '   ' + row[2] + '   ' + row[4] + '.png'
+        date = str(row[1]).replace("T00:00:00", "")
+        splitted_date = date.split('-')
+        clear_date = str(splitted_date[2] + '-' + splitted_date[1] + '-' + splitted_date[0])
+        filename = str(row[0]) + '   ' + clear_date + '   ' + row[2] + '   ' + row[4] + '.png'
         path = row[3].replace("vk.com", "m.vk.com")
         temp[filename] = path
     # print('*')

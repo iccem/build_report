@@ -16,9 +16,11 @@ def _get_report_links() -> list:
         temp.append(row)
 
     for row in temp:
-        date = str(row[1]).replace(" 00:00:00", "")
+        date = str(row[1]).replace("T00:00:00", "")
+        splitted_date = date.split('-')
+        clear_date = str(splitted_date[2] + '-' + splitted_date[1] + '-' + splitted_date[0])
         path = row[3]
-        links_report_list.append(date + '\n' + path)
+        links_report_list.append(clear_date + '\n' + path)
     return links_report_list
 
 
@@ -62,7 +64,8 @@ def get_report(company, month, path_imgs):
         current_date, current_link = link.split('\n')
         if current_date_print != current_date:
             p = document.add_paragraph('\n')
-            p.add_run(current_date).bold = True
+            p = document.add_paragraph(current_date)
+            # p.add_paragraph(current_date)
             print_imgs_by_date(current_date, pics, document, path_imgs)
             p = document.add_paragraph(current_link)
             current_date_print = current_date
