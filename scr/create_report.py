@@ -10,7 +10,7 @@ def _get_report_links() -> list:
     temp = []
     links_report_list = []
 
-    cursor.execute('''select * from STG_REPORT_LINKS''')
+    cursor.execute('''select * from STG_COMMON_CLICK_LINKS''')
 
     for row in cursor.fetchall():
         temp.append(row)

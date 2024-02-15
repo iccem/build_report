@@ -26,7 +26,7 @@ if __name__=='__main__':
 
     ###  Make screen.
     path_for_screens = doc.path_for_screens
-    m.make_screen(path_for_screens)
+    # m.make_screen(path_for_screens)
 
     ###  Create report.
     c.get_report(company, report_month, path_for_screens)
