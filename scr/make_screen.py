@@ -4,7 +4,6 @@ import sqlite3
 import os
 import time
 import errno
-# from doc import paths
 
 
 def _get_selenium(rows, path_for_screens, time_sleep):
@@ -36,7 +35,7 @@ def _get_selenium(rows, path_for_screens, time_sleep):
 
 
 def _get_common_links(common_click_links):
-    '''Получает список общих ссылок из таблицы 
+    '''Получает список ссылок из таблицы 
     и генерирует названия файлов.
     Возвращает список пар: имя файла и ссылка'''
     con = sqlite3.connect('scr/doc/online_adv.db')
@@ -78,5 +77,4 @@ def make_screen(path_for_screens):
     
     rows_common_screen = _make_common_screen()
     _get_selenium(rows_common_screen, path_for_screens, 5)
-    
     

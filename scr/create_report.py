@@ -69,10 +69,12 @@ def get_report(company, month, path_imgs):
             print_imgs_by_date(current_date, pics, document, path_imgs)
             p = document.add_paragraph(current_link)
             current_date_print = current_date
+            
         elif current_date_print == current_date:
             p = document.add_paragraph(current_link)
+        
+    # document.add_page_break()
             
 
-    # document.add_page_break()
-
     document.save(f'{company} {month}.docx')
+    
