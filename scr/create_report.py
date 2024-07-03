@@ -39,8 +39,10 @@ def print_imgs_by_date(current_date, pics, document, path_imgs):
                 print("Oops!  That was no valid number.  Try again...")
 
 def get_report(company, month, path_imgs):
+    #  Create doc.
     document = Document()
 
+    #  Add margins.
     sections = document.sections
     for section in sections:
         section.top_margin = Mm(12)
@@ -48,6 +50,7 @@ def get_report(company, month, path_imgs):
         section.left_margin = Mm(12)
         section.right_margin = Mm(12)
 
+    #  Add title.
     document.add_heading('ОТЧЕТ О РАЗМЕЩЕНИИ. Проект: «ОНЛАЙН»', 2)
     # document.add_heading('Проект: «ОНЛАЙН»', 2)
     document.add_heading(f'Период: {month}', 3)

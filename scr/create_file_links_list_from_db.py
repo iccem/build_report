@@ -1,6 +1,6 @@
 import sqlite3
 
-def _create_STG_common_click_links_table(company, date_start, date_end):
+def create_STG_tables(company, date_start, date_end):
     con = sqlite3.connect('scr/doc/online_adv.db')
     cursor = con.cursor()
 
@@ -62,7 +62,3 @@ def _create_STG_common_click_links_table(company, date_start, date_end):
 
     con.commit()
     con.close()
-
-
-def create_STG_tables(company, date_start, date_end):
-    _create_STG_common_click_links_table(company, date_start, date_end)

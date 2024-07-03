@@ -22,11 +22,11 @@ if __name__=='__main__':
 
 
     ###  Create stg-tables.
-    # cf.create_STG_tables(company, date_start, date_end)
+    cf.create_STG_tables(company, date_start, date_end)
 
     ###  Make screen.
     path_for_screens = doc.path_for_screens
-    # m.make_screen(path_for_screens)
+    m.make_screen(path_for_screens)
 
     ###  Create report.
     c.get_report(company, report_month, path_for_screens)
